@@ -13,10 +13,10 @@ cd ylsn
 yarn install # or npm install
 
 # 启动前台项目
-yarn run client
+yarn client
 
 # 启动后台项目
-yarn run server
+yarn server
 
 # 启动前后台项目
 yarn dev # or npm run dev
