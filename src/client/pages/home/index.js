@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Collect from '../collect/index';
 import './style.scss';
 
 export default class Home extends Component {
@@ -7,20 +8,21 @@ export default class Home extends Component {
     super(props);
 
     this.state = {
-			
-		};
-	
+
+    };
+
   }
 
   componentWillMount() {
-		
-	}
+
+  }
 
   render() {
     return (
-    	<div className="home-page">
-				hello world
-		  </div>
+      <div className="home-page">
+        {/* hello world */}
+        <Collect></Collect>
+      </div>
     );
   }
 }

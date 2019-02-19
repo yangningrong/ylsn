@@ -17,6 +17,7 @@
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
     "express": "^4.16.3",
+    "fun-plus": "git+http://git.i-fun.tech/fun-h5/fun-plus.git",
     "prop-types": "^15.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

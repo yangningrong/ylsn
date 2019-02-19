@@ -1,0 +1,83 @@
+@import "../../public/styles/theme/variables";
+$prefixCls: 'zby-picker-column';
+$height: 84px;
+.#{$prefixCls} {
+  flex: 1;
+
+  &-list {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+
+    .#{$prefixCls}-window {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      background-image:
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.4)),
+              linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.4));
+      background-position: top, bottom;
+      background-size: 100% 166px;
+      background-repeat: no-repeat;
+      z-index: 3;
+    }
+
+    .#{$prefixCls}-indicator {
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: $height;
+      //border-top: 1px solid #eee;
+      //border-bottom: 1px solid #eee;
+      transform: translate3D(0, -50%, 0);
+      z-index: 3;
+    }
+    .#{$prefixCls}-line {
+      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      pointer-events: none;
+    }
+    .#{$prefixCls}-top{
+      top: -100%;
+    }
+
+    .#{$prefixCls}-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      padding: 166px 0;
+      transform: translate3D(0, 0, 0);
+      transition-timing-function: linear;
+      transition-duration: 0ms;
+      transition-property: transform;
+
+      .#{$prefixCls}-col {
+        height: $height;
+        padding: 0 10px;
+        font-size: $bigFontSize;
+        text-align: center;
+        line-height: $height;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
+        transition: font-size 300ms ease-in;
+        color: $iconColor;
+
+        &.selected {
+          font-size: $biggestFontSize;
+          color: #333;
+          background: transparent;
+        }
+      }
+    }
+  }
+}

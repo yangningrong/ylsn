@@ -3177,6 +3177,16 @@ fstream@^1.0.0, fstream@^1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
+"fun-plus@git+http://git.i-fun.tech/fun-h5/fun-plus.git":
+  version "0.0.1"
+  resolved "git+http://git.i-fun.tech/fun-h5/fun-plus.git#db71019c5cee0a349c0b018fdc0723a3b4f82b05"
+  dependencies:
+    axios "^0.18.0"
+    classnames "^2.2.6"
+    history "^4.7.2"
+    react "^16.4.2"
+    react-dom "^16.4.2"
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "http://r.cnpmjs.org/function-bind/download/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
@@ -5789,9 +5799,9 @@ react-dev-utils@^7.0.3:
     strip-ansi "5.0.0"
     text-table "0.2.0"
 
-react-dom@^16.5.2:
+react-dom@^16.4.2, react-dom@^16.5.2:
   version "16.8.2"
-  resolved "http://r.cnpmjs.org/react-dom/download/react-dom-16.8.2.tgz#7c8a69545dd554d45d66442230ba04a6a0a3c3d3"
+  resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-16.8.2.tgz#7c8a69545dd554d45d66442230ba04a6a0a3c3d3"
   integrity sha1-fIppVF3VVNRdZkQiMLoEpqCjw9M=
   dependencies:
     loose-envify "^1.1.0"
@@ -5839,9 +5849,9 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react@^16.5.2:
+react@^16.4.2, react@^16.5.2:
   version "16.8.2"
-  resolved "http://r.cnpmjs.org/react/download/react-16.8.2.tgz#83064596feaa98d9c2857c4deae1848b542c9c0c"
+  resolved "http://registry.npm.taobao.org/react/download/react-16.8.2.tgz#83064596feaa98d9c2857c4deae1848b542c9c0c"
   integrity sha1-gwZFlv6qmNnChXxN6uGEi1QsnAw=
   dependencies:
     loose-envify "^1.1.0"
