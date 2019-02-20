@@ -349,10 +349,10 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty',
   },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM',
-    'prop-types': 'PropTypes'
-  }
+  // externals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM',
+  //   'react-router-dom': 'ReactRouterDOM',
+  //   'prop-types': 'PropTypes'
+  // }
 };
