@@ -6,43 +6,43 @@
   
   
   .collect-header{
-    padding:19px 180px;
-    height: 100%;
-    width:100%;
+    // padding:19px 180px;
+    // height: 100%;
+    // width:100%;
     // background-color: pink;
-    color:#fff;
-    font-size:36px;
-    text-align: center;
-    background-image: url('../../public/images/headMidBg.png'); 
+    // color:#fff;
+    // font-size:36px;
+    // text-align: center;
+    background-image: url('../../public/images/headMidBg.png') !important; 
   }
-  .collect-body{
-    padding:25px;
-    height: 100%;
-    color:#949AA7;
-    font-size: 26px;
+  // .collect-body{
+  //   padding:25px;
+  //   height: 100%;
+  //   color:#949AA7;
+  //   font-size: 26px;
    
-    span{
-      margin-top: 4px;
-      display: block;
-      margin-top: 30px;
-      input{
-        border: 0px;
-        color:black;
-        font-size: 26px;
-        padding:32px 0;
-        padding-left: 20px;
-      }
-     input::input-placeholder{
-       color:#DDE1EB;
-     }
-      select{
-        padding-left: 20px;
-      }
-    }
-  }
-  .collect-footer{
-    height: 35px;
-    width: 100%;
-    background-color: pink;
-  }
+  //   span{
+  //     margin-top: 4px;
+  //     display: block;
+  //     margin-top: 30px;
+  //     input{
+  //       border: 0px;
+  //       color:black;
+  //       font-size: 26px;
+  //       padding:32px 0;
+  //       padding-left: 20px;
+  //     }
+  //    input::input-placeholder{
+  //      color:#DDE1EB;
+  //    }
+  //     select{
+  //       padding-left: 20px;
+  //     }
+  //   }
+  // }
+  // .collect-footer{
+  //   height: 35px;
+  //   width: 100%;
+  //   background-color: pink;
+  // }
 }
