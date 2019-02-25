@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import model from './model';
 import { Components } from 'fun-plus';
@@ -33,8 +33,6 @@ export default class Collect extends BasePage {
   }
 
   componentWillMount() {
-    let options = [];
-    const { productList } = this.state;
 
   }
 
@@ -45,7 +43,6 @@ export default class Collect extends BasePage {
   }
 
   onChangeType(value) {
-    console.log(value);
     this.setState({
       type: value
     })
@@ -72,8 +69,6 @@ export default class Collect extends BasePage {
 
   }
   cancle = () => {
-    console.log(this);
-
     this.back();
   }
   render() {
@@ -90,20 +85,15 @@ export default class Collect extends BasePage {
 
         {/* 内容区域 */}
         <section className="collect-box">
-
           <div className="collect-input">
             <FunPicker title={'空间类型'} ref={this.typePickerRef} data={typeOptions} onChange={this.onChangeType.bind(this)} />
-
             <Link className="line-bottom" onClick={this.showPicker.bind(this)}>
-
               <span className="require">*</span>
               <span className="selector-label">空间类型</span>
               <span className={this.getType(type) ? "right selected" : 'right'}>{this.getType(type) || '选择空间类型'}
                 <Icon icon="angle-down" />
               </span>
-
             </Link>
-
           </div>
           <div className="collect-content line-bottom">
             {/* 输入框 */}
@@ -112,32 +102,22 @@ export default class Collect extends BasePage {
               label="空间内容"
               required
               value={projectName}
-              onChange={(value) => {
-                this.onInput(
-                  'projectName', value)
-              }} />
-
-
+              onChange={(value) => {this.onInput('projectName', value)}}
+               />
           </div>
-
         </section>
 
         {/* 底部按钮 区域 */}
         <Footer className="btn-box">
           <Button className="cancle-btn" onClick={this.cancle}>
             取消
-              </Button>
+          </Button>
           <Button className="save-btn" type="primary" onClick={this.getList}>
-
             确定
-              </Button>
+          </Button>
         </Footer>
 
-
       </Layout>
-
-
-
     );
   }
 }
