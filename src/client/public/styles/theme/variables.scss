@@ -1,0 +1,42 @@
+// 字体大小
+$smallestFontSize: 24px;
+$smallFontSize: 26px;
+$defaultFontSize: 28px;
+$bigFontSize: 30px;
+$bigFontSize2: 32px;
+$biggerFontSize: 34px;
+$biggestFontSize: 36px;
+
+//主题颜色
+$primaryColor: #FDB913;
+$activeColor: #E0AE01;
+$yellowColor: #FFDF83;
+$defaultFontColor: #333;
+$yellowFontColor: #E0AE01;
+$lightFontColor: #989A9C;
+$iconColor: #949AA7;
+$errorColor: #F15D61;
+$scrollBack: #efefef;
+$blueColor: #00AAEE;
+
+
+// 输入框样式
+$inputBorderColor: #efefef;
+$inputPlaceHolderColor: #C6CBD7;
+
+// 禁用按钮的背景色
+$buttonDisabledBackColor: $inputPlaceHolderColor;
+$buttonDisabledColor: #798190;
+$primaryButtonColor: #795600;
+$whiteButtonColor: #3C414B;
+$bigBtnFontSize: 32px;
+
+// 设置padding值
+$contentDistance: 60px;
+
+
+// 设置header
+$headerHeight: 44px;
+$headerTitleFontSize: $biggestFontSize;
+
+$imgLoadBack: #f2f2f2;

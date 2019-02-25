@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './style.scss';
+import Collect from '../collect';
 
 export default class Home extends Component {
   constructor(props) {

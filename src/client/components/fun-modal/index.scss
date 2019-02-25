@@ -1,0 +1,141 @@
+@import "../../public/styles/theme/variables";
+
+$headerPaddingDistance: 20px;
+$headerHeight: 90px;
+
+.fun-modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 10001;
+
+  .fun-modal {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 80%;
+    background-color: #fff;
+    z-index: 10001;
+    transition: all 250ms ease-out;
+    margin-bottom: -$headerHeight;
+
+
+    .fun-modal-header {
+      width: 100%;
+      color: $iconColor;
+      padding: $headerPaddingDistance 0;
+      position: relative;
+      text-align: center;
+      line-height: 50px;
+      height: 50px;
+      box-sizing: content-box;
+      background-color: #F8F8F8;
+      margin-top: -90px;
+
+      .left, .right {
+        width: 90px;
+        text-align: left;
+        padding-left: $headerPaddingDistance;
+        height: 90px;
+        line-height: 90px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+
+      .icon-con.right {
+        right: 0;
+        left: auto;
+        padding-left: 0;
+        padding-right: $headerPaddingDistance;
+        text-align: right;
+        color: $activeColor;
+      }
+      .fun-icon {
+        font-size: 40px;
+        line-height: inherit;
+      }
+      .fun-modal-title {
+        flex: 1;
+        text-align: center;
+        font-size: $bigFontSize2;
+      }
+    }
+
+    .fun-modal-wrapper {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  .fd-back{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 250ms linear;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &.fun-modal-container-enter {
+    display: block;
+    .fun-modal{
+      transform: translateY(100%);
+      margin-bottom: -$headerHeight;
+    }
+    .fd-back{
+      opacity: 0;
+    }
+  }
+  &.fun-modal-container-active {
+    display: block;
+    .fun-modal{
+      transform: translateY(0%);
+      margin-bottom: 0;
+    }
+    .fd-back{
+      opacity: 1;
+    }
+  }
+  &.fun-modal-container-enter-done {
+    display: block;
+    .fun-modal{
+      transform: translateY(0%);
+      margin-bottom: 0;
+    }
+    .fd-back{
+      opacity: 1;
+    }
+  }
+  &.fun-modal-container-exit {
+    display: block;
+    .fun-modal{
+      transform: translateY(0%);
+      margin-bottom: 0;
+    }
+    .fd-back{
+      opacity: 1;
+    }
+  }
+  &.fun-modal-container-exit-active {
+    display: block;
+    .fun-modal{
+      transform: translateY(100%);
+      margin-bottom: -$headerHeight;
+    }
+    .fd-back{
+      opacity: 0;
+    }
+  }
+
+  &.fun-modal-container-exit-done{
+    display: none;
+  }
+}
+

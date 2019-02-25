@@ -6,43 +6,83 @@
   
   
   .collect-header{
-    padding:19px 180px;
-    height: 100%;
-    width:100%;
-    // background-color: pink;
-    color:#fff;
-    font-size:36px;
-    text-align: center;
-    background-image: url('../../public/images/headMidBg.png'); 
-  }
-  .collect-body{
-    padding:25px;
-    height: 100%;
-    color:#949AA7;
-    font-size: 26px;
-   
-    span{
-      margin-top: 4px;
-      display: block;
-      margin-top: 30px;
-      input{
-        border: 0px;
-        color:black;
-        font-size: 26px;
-        padding:32px 0;
-        padding-left: 20px;
+    .header-content{
+      background-image: url('../../public/images/headMidBg.png') !important; 
+      .header-left{
+        color:#fff;
       }
-     input::input-placeholder{
-       color:#DDE1EB;
-     }
-      select{
-        padding-left: 20px;
+      .header-center{
+        color:#fff;
       }
     }
   }
-  .collect-footer{
-    height: 35px;
-    width: 100%;
-    background-color: pink;
+  .collect-box{
+    padding:32px 30px 20px 30px;
+    background-color:rgba(247,246,249,1);
+  }
+  .collect-box{
+    .collect-input{
+      .fun-link{
+        display: flex;
+        line-height: 102px;
+        font-size: 28px;
+        color: #333;
+        .require {
+          display: inline-block;
+          color: #F15D61;
+          width: 0.24rem;
+          margin-left: -0.24rem;
+        }
+      }
+      .right {
+        color: #C6CBD7;
+        span {
+          vertical-align: middle;
+        }
+      }
+      .fun-icon {
+        position: absolute;
+        right: 30px;
+        color: #c6cbd7;
+      }
+      .selector-label {
+        color: #949AA7;
+        padding-right: 30px;
+      }
+      .selected {
+        color: #2A364E;
+      }
+    }
+    .collect-content {
+      .input-label {
+        color: #949AA7;
+      }
+      .input-value {
+        color: #2A364E;
+      }
+    }
+  }
+  .btn-box{
+    .footer-content{
+      padding:15px 20px;
+      text-align: right;
+      .cancle-btn{
+        width: 210px;
+        height: 78px;
+        font-size: 30px;
+        color:rgba(148,154,167,1);
+        margin-right:20px;
+        font-weight:400;
+      }
+      .save-btn{
+        width: 210px;
+        height: 78px;
+        font-size: 30px;
+        background:rgba(0,127,255,1);
+        font-weight:400;
+      color:rgba(255,255,255,1);
+      }
+    }
+
   }
 }
