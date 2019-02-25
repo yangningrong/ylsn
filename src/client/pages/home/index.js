@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Collect from '../collect/index';
 import './style.scss';
+import Collect from '../collect';
 
 export default class Home extends Component {
   constructor(props) {
@@ -20,8 +20,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home-page">
-        {/* hello world */}
-        <Collect></Collect>
+        hello world
       </div>
     );
   }
