@@ -74,7 +74,6 @@ export default class Collect extends BasePage {
   render() {
     const { type, projectName } = this.state;
 
-
     return (
       <Layout className="collect-page">
 
