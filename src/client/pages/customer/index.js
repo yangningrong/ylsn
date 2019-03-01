@@ -162,7 +162,7 @@ class customer extends BasePage {
                 </div>
                 <div className="item-bottom">
                   <div className="item-bottom-data">
-                    <Icon className="item-bottom-data-label" icon="qianke-tel" />
+                    <Icon className="item-bottom-data-icon" icon="qianke-tel" />
                     <span className="item-bottom-data-label">电访计划</span>
                     <span className={classNames("item-bottom-data-value", item.phonePlanDate ? "" : "item-bottom-data-value-r")}>{item.phonePlanDate ? item.phonePlanDate : '暂无计划'}</span>
                   </div>
