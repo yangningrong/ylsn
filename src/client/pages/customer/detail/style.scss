@@ -1,0 +1,348 @@
+.customer-detail-page {
+  height: 100%;
+  .page-headerbar {
+    height: 84px;
+    width: 100%;
+    &.no-header-bat{
+      display:none;
+    }
+    .SelectBox.required:before{
+      content: "";
+      display:none;
+    }
+    .SelectBox .SelectIcon{
+      display: none;
+    }
+  }
+  
+  .customer-header {
+    background-image: url('../../../public/images/headBtBg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    height: 84px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .item-text{
+      font-size:26px;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+    }
+    .fun-header,
+    .header-content {
+      font-size: 36px;
+      font-weight: 500;
+      background-color: transparent;
+      color: #fff;
+      .header-left,
+      .header-right {
+        color: #fff;
+      }
+    }
+    .SelectLabel{
+      font-size: 26px;
+      padding:0;
+    }
+  }
+
+  // 客户信息样式
+  .customer-detail {
+    padding: 30px 30px 0;
+    .detail-item {
+      padding: 0 30px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 2px 10px 0px rgba(225, 225, 225, 0.5);
+      border-radius: 16px;
+      position: relative;
+      margin-bottom: 30px;
+      .item-top {
+        padding: 30px 0 28px 0;
+        .item-name {
+          height: 42px;
+          line-height: 42px;
+          .line-right{
+            border-right: 1px solid #E9E9E9;
+          }
+          .name {
+            font-size: 30px;
+            font-weight: bold;
+            color: rgba(42, 54, 78, 1);
+            margin-right: 12px;
+            vertical-align: middle;
+          }
+          .name-width{
+            display: inline-block;
+            max-width: 230px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .gender {
+            color: #007FFF;
+            font-size: 22px;
+            font-style: normal;
+            vertical-align: middle;
+            padding-right: 12px;
+            margin-right: 13px;
+          }
+          .gender-women{
+            color: #FF6666;
+            font-size: 22px;
+            font-style: normal;
+            vertical-align: middle;
+            padding-right: 12px;
+            margin-right: 13px;
+          }
+          .star-five {
+            font-style: normal;
+            vertical-align: middle;
+            color: #FFA900;
+            font-size: 20px;
+            span {
+              margin-right: 7px;
+            }
+          }
+        }
+        .item-top-closereason{
+          font-size:22px;
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(0,127,255,1);
+          margin-bottom: 30px;
+          .item-top-closereason-span{
+            display: inline-block;
+            width: 520px;
+          }
+          .item-top-closebtn{
+            float: right;
+            color:rgba(148,154,167,1);
+          }
+        }
+        .item-top-name{
+          height: 56px;
+        }
+        .item-top-btn {
+          display:inline-block;
+          width: 170px;
+          height: 56px;
+          line-height: 56px;
+          text-align: center;
+          background: rgba(0,127,255,1);
+          box-shadow: 0px 2px 6px 0px rgba(188, 215, 255, 1);
+          border-radius: 33px;
+          color: #fff;
+          font-size: 24px;
+          float: right;
+        }
+        .item-date,
+        .item-address {
+          font-size: 24px;
+          font-weight: 400;
+          color: rgba(166, 168, 182, 1);
+          line-height: 33px;
+          margin-bottom: 12px;
+          .item-pro-name{
+            display: inline-block;
+            width: 400px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            vertical-align: bottom;
+          }
+          .item-tag {
+            color: #fff;                    
+            border-radius: 3px;
+            font-size:10px; /* no */
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            line-height: 30px;
+            text-align: center;
+            vertical-align: middle;
+          }
+          .item-tag-r {
+            background-color: #FF6758;
+          }
+          .item-tag-o {
+            background-color: #FF852B;
+          }
+          .item-tag-p {
+            background-color: #666AE3;
+          }
+        }
+        .item-date-b {
+          color: #2A364E;
+          font-size: 24px;
+          line-height: 33px;
+        }
+        .item-data-channel{
+          margin-bottom: 15px;
+        }
+        .item-data-bottombtn{
+          display: flex;
+          justify-content: space-between;
+          .item-data-bottom-btn{
+            width: 167px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            // border:1px solid #E1E1E1; 
+            border-radius: 60px;
+            color: #949AA7;
+            font-size: 24px;
+            font-weight:400;
+            .icon-qianke-xiugai{
+              color:#007FFF;
+              margin-right: 5px;
+              vertical-align:baseline;
+              font-size: 24px;
+            }
+            .item-data-bottom-btn-text{
+              vertical-align: top;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 公司列表样式
+  .order-list {
+    padding: 0 30px;
+    .list-item {
+      // height:295px;
+      padding: 0 30px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 2px 10px 0px rgba(225, 225, 225, 0.5);
+      border-radius: 16px;
+      position: relative;
+      margin-bottom: 30px;
+      .item-bar {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 6px;
+        height: 56px;
+      }
+      .green-bar {
+        background: rgba(33, 190, 142, 1);
+      }
+      .red-bar {
+        background:rgba(255,94,98,1);
+      }
+      .item-top {
+        padding: 30px 0 20px 0;
+        // border-bottom: 1px solid #E9E9E9;
+        .item-name {
+          height: 37px;
+          line-height: 37px;
+          margin-bottom: 12px;
+          width: 300px;
+          overflow:hidden;
+          text-overflow:ellipsis;
+          white-space:nowrap;
+          .name {
+            font-size: 26px;
+            font-weight: 500;
+            color:rgba(42,54,78,1);
+            line-height: 37px;
+          }
+        }
+        .item-name-overflow{
+          width: 600px !important;
+        }
+        .item-top-btn {
+          display: inline-block;
+          width: 170px;
+          height: 56px;
+          line-height: 56px;
+          text-align: center;
+          background: transparent;
+          border-radius: 28px;
+          color: rgba(0, 127, 255, 1);
+          font-size: 24px;
+          float: right;
+        }
+        .item-top-btn-border{
+          border: 2px solid rgba(0, 127, 255, 1);
+          // box-shadow: 0px 2px 6px 0px rgba(188, 215, 255, 1);
+        }
+        .item-top-btn-noborder{
+          border: 2px solid #fff;
+          box-shadow: 0px 0px 0px 0px #fff;
+        }
+        .item-date,
+        .item-address {
+          font-size: 24px;
+          font-weight: 400;
+          color: rgba(166, 168, 182, 1);
+          margin-bottom: 12px;
+          .item-tag {
+            color: #fff;                    
+            border-radius: 3px;
+            font-size:10px; /* no */
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            line-height: 30px;
+            text-align: center;
+            vertical-align: middle;
+          }
+          .item-tag-r {
+            background-color: #FF5E62;
+          }
+          .item-tag-o {
+            background-color: #FF852B; 
+          }
+          .item-tag-p {
+            background-color: #666AE3; 
+          }
+          .item-tag-g{
+            background-color:#E2E2E2;
+          }
+        }
+        .item-together {
+          font-size: 24px;
+          font-weight: 400;
+          color: rgba(166, 168, 182, 1);
+        }
+      }
+      .item-bottom {
+        padding: 20px 0;
+        font-size: 24px;
+        font-weight: 400;
+        color:rgba(42,54,78,1);
+        line-height:33px;
+      }
+      .item-line-green {
+        width: 6px;
+        height: 58px;
+        background: rgba(33, 190, 142, 1);
+        position: absolute;
+        left: 0;
+        top: 30px;
+      }
+      .item-line-red {
+        width: 6px;
+        height: 58px;
+        background: #FF5E62;
+        position: absolute;
+        left: 0;
+        top: 30px;
+      }
+    }
+  }
+
+  .iphonex-bottom{
+    height: 100px;
+  }
+  .header-center{
+    color:#fff;
+  }
+}

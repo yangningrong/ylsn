@@ -7,7 +7,9 @@
   
   .collect-header{
     .header-content{
-      background-image: url('../../public/images/headMidBg.png') !important; 
+      background-image: url('../../public/images/headMidBg.png');
+      background-repeat: no-repeat;
+      background-size: cover; 
       .header-left{
         color:#fff;
       }
