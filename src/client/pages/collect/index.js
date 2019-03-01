@@ -33,6 +33,7 @@ export default class Collect extends BasePage {
   }
 
   componentWillMount() {
+
   }
 
   showPicker() {
@@ -100,10 +101,8 @@ export default class Collect extends BasePage {
               label="空间内容"
               required
               value={projectName}
-              onChange={(value) => {
-                this.onInput(
-                  'projectName', value)
-              }} />
+              onChange={(value) => {this.onInput('projectName', value)}}
+               />
           </div>
         </section>
 
