@@ -20,11 +20,15 @@ class customer extends BasePage {
     super(props);
 
     this.state = {
+      searchStatus: false,
+      contentIndex: [0, 0, 0],
+      index: -1,
       customerList: [],
       isReady: true,
     };
 
     this.model = {
+      searchText: '',
       queryData: {
         pageNumber: 1,
         pageSize: 20,
@@ -96,8 +100,64 @@ class customer extends BasePage {
   }
 
 
+  onSearch = () => {
+    const { searchText } = this.model;
+    this.model.queryData = {
+      pageNumber: 1,
+      pageSize: 20,
+      signStatus: 3,
+      guideStatus: 2,
+      orderType: 0,
+    };
+    this.setState({ contentIndex: [0, 0, 0] });
+    this.loadList(searchText);
+  }
+
+  // 上拉加载
+  onLoad = () => {
+    const { total, customerList } = this.state;
+    const { queryData } = this.model;
+    const { pageNumber, pageSize, ...rest } = queryData;
+    this.setState({ isReady: true })
+    if (pageNumber * pageSize >= total) return;
+    model.getList({ pageNumber: pageNumber + 1, pageSize, ...rest }).then(res => {
+      this.model.queryData = { pageNumber: pageNumber + 1, pageSize, ...rest };
+      this.setState({ isReady: false, customerList: customerList.concat(res.customerList), total: res.total });
+    }).catch((error) => {
+      if (error.data && error.data.data && error.data.data.message) {
+        this.showToast(error.data.data.message)
+      }
+    })
+  }
+
+
+  // 搜索框change事件
+  onSearchChange = (val) => {
+    this.model.searchText = val;
+    if (val === '') {
+      this.timer = setTimeout(() => {
+        this.model = {
+          queryData: {
+            pageNumber: 1,
+            pageSize: 20,
+            signStatus: 3,
+            guideStatus: 2,
+            orderType: 0,
+          }
+        }
+        this.setState({ contentIndex: [0, 0, 0] });
+        this.loadList('')
+      }, 300)
+    } else {
+      if (this.timer) {
+        window.clearTimeout(this.timer);
+      }
+    }
+  }
+
   render() {
     const { customerList, isReady } = this.state;
+    const { searchText } = this.model;
 
     return (
       <Layout className="customer-page">
@@ -111,8 +171,8 @@ class customer extends BasePage {
             </Header>
 
             <div className="customer-search">
-              <span className="search-bar-cancle-btn">搜索</span>
-              <TextInput placeholder="请输入客户姓名搜索" icon="search" />
+              <span className="search-bar-cancle-btn" onClick={this.onSearch} >搜索</span>
+              <TextInput placeholder="请输入客户姓名搜索" onChange={val => this.onSearchChange(val)} value={searchText} icon="search" />
             </div>
 
             <CustomerFilters
