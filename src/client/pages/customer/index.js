@@ -11,7 +11,7 @@ import classNames from 'classnames';
 import Pages from '../../common/config/pages';
 // import customer from '../customer';
 
-const { BasePage, Layout, Header, Icon, TextInput, ScrollLoad } = Components;
+const { BasePage, Layout, Header, Icon, TextInput, ScrollLoad, Link } = Components;
 
 const filters = [[3, 0, 1, 2], [2, 1, 0], [0, 1, 2, 3]];
 
@@ -155,6 +155,21 @@ class customer extends BasePage {
     }
   }
 
+  // 跳转新增客户页面
+  handle() {
+    this.jump(Pages['NEWCUSTOER'])
+  }
+
+
+  // 调电话号码
+  phone = (phonenum) => {
+    if (phonenum) {
+      window.location.href = 'tel:' + phonenum;
+    } else {
+      this.showToast('请先录入手机号码');
+    }
+  }
+
   render() {
     const { customerList, isReady } = this.state;
     const { searchText } = this.model;
@@ -167,7 +182,8 @@ class customer extends BasePage {
             <Header showLine={false}>
               <Header.Left></Header.Left>
               <Header.Center>客户管理</Header.Center>
-              <Header.Right><Icon icon="add-friend" />新增客户</Header.Right>
+              {/* style={{color:'black'}}> */}
+              <Header.Right onClick={this.handle.bind(this)}> <Icon icon="add-friend" />新增客户</Header.Right>
             </Header>
 
             <div className="customer-search">
@@ -191,9 +207,10 @@ class customer extends BasePage {
             {customerList.map(item => (
               <li key={item.id} className="list-item" onClick={e => { e.target.tagName !== 'A' && this.jump(Pages['CUSTOMERDETAIL'], { uid: `${item.id}` }) }}>
                 <div className="item-top line-bottom">
-                  {item.customerType == 0 ? <a className="item-top-btn" href="javascript:void(0)" onClick={() => this.phone(item.brokerPhone)}><Icon icon="phone" /> &nbsp;联系中介</a> : <a className="item-top-btn" href="javascript:void(0)" onClick={() => this.phone(item.mobile)}><Icon icon="phone" />&nbsp;联系客户</a>}
+                  {item.customerType == 0 ? <a className="item-top-btn" href="javascript:void(0)" onClick={() => this.phone(item.brokerPhone)}><Icon icon="phone" />&nbsp;联系中介</a> :
+                    <a className="item-top-btn" href="javascript:void(0)" onClick={() => this.phone(item.mobile)}><Icon icon="phone" />&nbsp;联系客户</a>}
                   <p className="item-name">
-                    <span className="name">{item.name.length > 8 ? `${item.name.slice(0, 6)}...` : item.name} </span>
+                    <span className="name">{item.name.length > 8 ? `${item.name.slice(0, 6)}...` : item.name}</span>
                     <em className={classNames("gender line-right", item.gender == 1 ? "gender-women" : "gender-men")}><Icon icon={item.gender == 1 ? "women" : "men"} /></em>
                     <span className="star">
                       <span className="star-five">
@@ -202,9 +219,7 @@ class customer extends BasePage {
                             if (val || val == '0') {
                               return (<Icon icon="star-full" key={_ind} />)
                             } else {
-                              return (<Icon
-                                icon="start-empty-bold" key={_ind}
-                              />)
+                              return (<Icon icon="start-empty-bold" key={_ind} />)
                             }
                           })
                         }
@@ -212,12 +227,11 @@ class customer extends BasePage {
                     </span>
                   </p>
                   <p className="item-date item-data-p">
-                    <span className={classNames('item-tag', { 0: 'item-tag-r', 1: 'item-tag-o', 2: 'item-tag-p' }[item.status])}>{{ 0: '未签约', 1: '已签约', 2: '已关闭' }[item.status]}
-                    </span>
+                    <span className={classNames("item-tag", { 0: 'item-tag-r', 1: 'item-tag-o', 2: 'item-tag-p' }[item.status])}>{{ 0: '未签约', 1: '已签约', 2: '已关闭' }[item.status]}</span>
                   </p>
                   <p className="item-date item-date-b">[{item.organizationType}]{item.organizationName}</p>
-                  <p className="item-address">项目:{item.relatedProjectName}</p>
-                  <p className="item-date">意向:意向：{item.requiredType} | {item.stationNumber || '--'} 工位 | {item.enterMonthName || '-'}{item.enterPeriodName || '-'} 入驻 | {item.budget ? `${item.budget}/月工位` : '无预算'}</p>
+                  <p className="item-address">项目：{item.relatedProjectName}</p>
+                  <p className="item-date">意向：{item.requiredType} | {item.stationNumber || '--'} 工位 | {item.enterMonthName || '-'}{item.enterPeriodName || '-'} 入驻 | {item.budget ? `${item.budget}/月工位` : '无预算'}</p>
                   <p className="item-together" style={{ display: item.customerType == 0 ? 'block' : 'none' }}>渠道：{item.channelType}{item.channelName ? ` | ${item.channelName}` : ''} {item.broker ? ` | ${item.broker}` : ''}</p>
                 </div>
                 <div className="item-bottom">
@@ -229,19 +243,16 @@ class customer extends BasePage {
                   <div className="item-bottom-data">
                     <Icon className="item-bottom-data-icon" icon="qianke-biaodan" />
                     <span className="item-bottom-data-label">带看计划</span>
-                    <span className={classNames("item-bottom-data-value", item.lookPlanDate ? "" : "item-bottom-data-value-r")}>
-                      {item.lookPlanDate ? item.lookPlanDate : '暂无计划'}</span>
+                    <span className={classNames("item-bottom-data-value", item.lookPlanDate ? "" : "item-bottom-data-value-r")}>{item.lookPlanDate ? item.lookPlanDate : '暂无计划'}</span>
                   </div>
                 </div>
-
               </li>
-
             ))}
           </ul>)}
 
 
-        {/* <ScrollLoad onLoad={this.onLoad} />
-        <div className='customer-page-layer' onClick={() => { this.setState({ index: -1 }) }} style={{ display: this.state.index != -1 ? 'block' : 'none' }}></div> */}
+        <ScrollLoad onLoad={this.onLoad} />
+        <div className='customer-page-layer' onClick={() => { this.setState({ index: -1 }) }} style={{ display: this.state.index != -1 ? 'block' : 'none' }}></div>
       </Layout>
     );
   }
