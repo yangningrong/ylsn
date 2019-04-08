@@ -18,7 +18,7 @@
     "enquire.js": "^2.1.6",
     "eventemitter3": "^3.1.0",
     "express": "^4.16.4",
-    "fun-plus": "git+http://git.i-fun.tech/fun-h5/fun-plus.git",
+    "fun-plus": "git+ssh://git@git-ssh.i-fun.tech:30082/fun-h5/fun-plus.git#master",
     "json2mq": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.5.2",

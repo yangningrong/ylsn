@@ -1,0 +1,17 @@
+@import "../../public/styles/theme/variables";
+
+
+.main-container[_fun-inner-scroll] {
+  overflow: hidden;
+  height: 100%;
+  .scroll-wrapper[_fun-inner-scroll] {
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(0, 0, 0);
+    //transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);
+    transition-timing-function: cubic-bezier(.1, .57, .1, 1);
+    transition-duration: 300ms;
+    transition-property: transform;
+  }
+}

@@ -1,0 +1,176 @@
+#root{
+  .detail{
+    min-height: 1700px;
+    background-color: #eaedf3;
+   height: 259px;
+    .detail-banner{
+      padding: 0px;
+      width: 100%;
+      height: 488px;
+      img{
+        width: 100%;
+        height: 100%;
+        background-size:contain;  
+      }
+    }
+    .detail-project{
+      font-family:PingFangSC-Medium;
+      width: 750px;
+      height: 300px;
+      // background-color: rgb(241, 237, 238);
+      padding:29px;
+      color:#333333;
+      box-sizing: border-box;
+      background-color: #fff;
+      .location{
+        font: 24px;
+        img{
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
+          margin-top: 20px;
+        }
+      }
+      .detail-price{
+        margin-top: 20px;
+        // margin-bottom: 20px;
+        .rmb{
+          color: #E0AE01;
+          font-size: 20px;
+        }
+        .unit{
+          color: #E0AE01;
+          font-size: 20px;
+        }
+        .price{
+          color: #E0AE01;
+          font-size: 34px;
+        }
+        .instruction{
+          font-size: 26px;
+          color:#949AA7;
+          float:right;
+        }
+      }
+      .welfare{
+        padding:5px;
+        margin-top: 10px;
+        span{
+          padding:1px 7px;
+          margin: 7px;
+          border: 1px solid #949AA7;
+          color: #949AA7;
+          border-radius: 16px;
+          font-size: 20px;
+          font-weight: 300;
+        }
+      }
+    }
+    .installation{
+      background-color: #fff;
+      .white{
+        margin-left: 40px;
+        background-color: #fff;
+        height: 140px;
+        .jianshenfang{
+          float: left;
+          height: 140px;
+          width: 108px;
+          text-align: center;
+          display: inline-block;
+          padding: 17px 5px;
+          color: #aeafb3;
+          .installation-icon{
+            width:48px;
+            height:48px;
+          }
+          .installation-name{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+   
+    .room-hot{
+      padding-top: 35px;
+      margin-top: 17px;
+      padding-left: 35px;
+      background-color: #fff;
+      height:95px;
+      font-size:34px;
+      font-family:PingFangSC-Regular;
+      font-weight:400;
+      color:rgba(51,51,51,1);
+      line-height:48px;
+    }
+    .rooms{
+      .room-type{
+        background-color: #fff;
+        width:750px;
+        height:218px;
+        display: flex;
+        padding: 35px;
+        // flex-direction:row-reverse;
+        .left{
+          flex: 2;
+          width: 228px;
+          img{
+            display: inline-block;
+            width:240px;
+            height:150px;
+            border-radius: 9px;
+            background-size: cover;
+            text-align: center;
+          }
+        }
+        .center{
+          flex: 2;
+          font-family:PingFangSC-Regular;
+          .tingwei{
+            margin-top: 3px;
+            color:#949AA7;
+            font-weight:400;
+            font-size:22px;
+          }
+          .style{
+            font-size:30px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(51,51,51,1);
+          }
+          .danjia{
+            margin-top: 10px;
+           
+            .rmb{
+              font-size:34px;
+              font-family:PingFangSC-Medium;
+              font-weight:500;
+              color:rgba(224,174,1,1);
+            }
+            font-size:20px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(224,174,1,1);
+            line-height:48px;
+          }
+          p{
+            padding: 3px 0;
+          }
+        }
+        .right{
+          flex:1;
+          padding: 43px 0px;
+         .order-btn{
+           font-size: 24px;
+           width:156px;
+           height: 60px;
+           line-height: 60px;
+         }
+        }
+      }
+
+    }
+
+  }
+}

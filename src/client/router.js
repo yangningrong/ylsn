@@ -9,7 +9,7 @@ import { Url, Components } from 'fun-plus';
 import Home from './pages/home';
 import Collect from './pages/collect';
 import Customer from './pages/customer';
-import NewCustomer from './pages/customer/newCustomer';
+import NewCustomer from './pages/newCustomer';
 
 const { History } = Url;
 const { RouterListener } = Components;
@@ -32,7 +32,7 @@ export default class RouterList extends Component {
           <Route exact path="/home" component={Home} />
           <Route exact path="/collect" component={Collect} />
           <Route exact path="/customer" component={Customer} />
-          <Route path="/new-customer" component={NewCustomer} />
+          <Route exact path="/new-customer" component={NewCustomer} />
         </RouterListener>
       </Router>
     )
